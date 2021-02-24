@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- template from https://vsitzmann.github.io/metasdf/ -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="ReVoLT: Relational Reasoning and Voronoi Local graph planning for Target-driven navigation">
+    <meta name="author" content="Junjia Liu,
+                                 Jianfei Guo,
+                                 Zehui Meng,
+                                 Jingtao Xue,
+                                 Zhuang Fu,
+                                 Guangwu Liu">
+
+    <title>ReVoLT: Relational Reasoning and Voronoi Local graph planning for Target-driven navigation</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+
+    <!-- Loads <model-viewer> for modern browsers: -->
+    <script type="module"
+            src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js">
+    </script>
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container"></div>
+    <h2>ReVoLT: Relational Reasoning and Voronoi Local graph planning for Target-driven navigation</h2>
+    <!-- <h2>IROS 2021</h2> -->
+    <hr>
+    <p class="authors">
+        <!-- <a href="">Junjia Liu*</a>, -->
+        <a>Junjia Liu*</a>,
+        <a>Jianfei Guo*</a>,
+        <a>Zehui Meng</a>,</br>
+        <a>Jingtao Xue</a>,
+        <a>Zhuang Fu</a>,
+        <a>Guangwu Liu</a>
+    </p>
+    <div class="btn-group" role="group" aria-label="Top menu">
+        <a class="btn btn-primary disabled" href="">Code(Coming soon)</a>
+        <a class="btn btn-primary disabled" href="">Paper</a>
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=Y3zUcWqXaHo">Video</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- abstract, video -->
+    <div class="section">
+        <div class="row align-items-center">
+            <div class="video-container">
+                <!-- <video width="80%" playsinline="" autoplay="" loop="" preload="" muted=""> -->
+                <iframe class="video" src="https://www.youtube.com/embed/Y3zUcWqXaHo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <!-- </video> -->
+            </div>
+        </div>
+        <hr>
+        <p>
+            Embodied AI is an inevitable trend that emphasizes
+            the interaction between intelligent entities and the real world,
+            with broad applications in Robotics, especially target-driven
+            navigation. This task requires the robot to find an object of a
+            certain category efficiently in an unknown domestic environment.
+            Recent works focus on exploiting layout relationships by graph
+            neural networks (GNNs). However, most of them obtain robot
+            actions directly from observations in an end-to-end manner via
+            an incomplete relation graph, which are not interpretable and re-
+            liable. We decouple this task and propose ReVoLT, a hierarchical
+            framework: (a) an object detection visual frontend, (b) a high-
+            level reasoner (infers object-level sub-goals), (c) an intermediate-
+            level planner (computes spatial location sub-goals from object-
+            level sub-goals), and (d) a low-level controller (executes actions),
+            which operates with a multi-layer semantic-spatial topological
+            graph. The reasoner uses multiform structured relations as
+            priors, which are obtained from combinatorial relation extraction
+            networks composed of unsupervised GraphSAGE, GCN and
+            GraphRNN-based Region Rollout. The reasoner performs with
+            Upper Confidence Bound for Tree (UCT) to select object-level
+            sub-goals, accounting for tradeoffs between exploitation (depth-
+            first searching) and exploration (regretting). The lightweight
+            planner generates spontaneous spatial location sub-goals from
+            object-level subgoals through an online constructed Voronoi local
+            graph, replacing classical SLAM. The simulation experiments
+            demonstrate that our framework achieves better performance
+            in the target-driven navigation tasks and generalizes well, which
+            is superior to the existing state-of-the-art methods.
+        </p>
+    </div>
+
+    <!-- <div class="section">
+        <h2>Paper</h2>
+        <hr>
+        <div>
+            <div class="list-group">
+                <a href="https://arxiv.org/abs/xxxx.xxxxx"
+                   class="list-group-item">
+                    <img src="img/paper_thumbnails.png" style="width:100%; margin-right:-20px; margin-top:-10px;">
+                </a>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="section">
+        <h2>Bibtex</h2>
+        <hr>
+        <div class="bibtexsection">
+            @inproceedings{sitzmann2019metasdf,
+                author = {Sitzmann, Vincent
+                          and Chan, Eric R.
+                          and Tucker, Richard
+                          and Snavely, Noah
+                          and Wetzstein, Gordon},
+                title = {MetaSDF: Meta-Learning Signed
+                         Distance Functions},
+                booktitle = {arXiv},
+                year={2020}
+            }
+        </div>
+    </div> -->
+
+    <hr>
+
+    <!-- <footer>
+        <p>Send feedback and questions to <a href="http://web.stanford.edu/~sitzmann/">Vincent Sitzmann</a></p>
+    </footer> -->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
